@@ -1,4 +1,4 @@
-FROM datalayer/hadoop:2.7.2
+FROM datalayer/hdfs-k8s-locality:2.7.3
 
 ENV HDFS_CONF_dfs_datanode_data_dir=file:///hadoop/dfs/data
 RUN mkdir -p /hadoop/dfs/data

@@ -53,7 +53,7 @@ ENV PATH=${PATH}:/opt/hadoop/bin
 # HDFS Locality
 
 ADD lib/pod-cidr-namenode-topology-plugin-0.1-SNAPSHOT-jar-with-dependencies.jar /lib
-COPY hdfs-k8s-locality /etc/hdfs-k8s-locality
+COPY hdfs-locality /etc/hdfs-locality
 
 # 
 
