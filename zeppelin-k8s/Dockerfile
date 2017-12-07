@@ -46,14 +46,13 @@ ADD lib/spark-benchmarks-dfsio-0.1.0-with-dependencies.jar /lib
 
 # Hadoop Distribution
 
-ADD dist/hadoop-2.7.3.tar.gz /opt
-RUN mv /opt/hadoop-2.7.3 /opt/hadoop
+ADD dist/hadoop-2.9.0.tar.gz /opt
+RUN mv /opt/hadoop-2.9.0 /opt/hadoop
 ENV PATH=${PATH}:/opt/hadoop/bin
 
 # HDFS Locality
 
 ADD lib/pod-cidr-namenode-topology-plugin-0.1-SNAPSHOT-jar-with-dependencies.jar /lib
-COPY hdfs-locality /etc/hdfs-locality
 
 # 
 

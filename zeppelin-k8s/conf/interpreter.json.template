@@ -489,10 +489,19 @@
       ],
       "dependencies": [
         {
-          "groupArtifactVersion": "org.apache.hadoop:hadoop-aws:2.7.3",
+          "groupArtifactVersion": "org.apache.hadoop:hadoop-aws:2.9.0",
+          "local": false,
+          "exclusions": []
+        },
+        {
+          "groupArtifactVersion": "/lib/spark-benchmarks-dfsio-0.1.0-with-dependencies.jar",
+          "local": false
+        },
+        {
+          "groupArtifactVersion": "/lib/pod-cidr-namenode-topology-plugin-0.1-SNAPSHOT-jar-with-dependencies.jar",
           "local": false
         }
-      ],
+       ],
       "option": {
         "remote": false,
         "host": "localhost",
