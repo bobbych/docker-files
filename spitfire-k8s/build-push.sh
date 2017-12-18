@@ -18,9 +18,9 @@
 # under the License.
 
 docker build \
-  -t datalayer/zeppelin-k8s:2.2.0-0.5.0 \
+  -t datalayer/spitfire-k8s:2.2.0-0.5.0 \
   --squash \
   --compress \
   .
 
-docker push datalayer/zeppelin-k8s:2.2.0-0.5.0
+docker push datalayer/spitfire-k8s:2.2.0-0.5.0
