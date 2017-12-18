@@ -38,7 +38,7 @@ RUN sed -i s/INFO/DEBUG/ /opt/zeppelin/conf/log4j.properties
 RUN rm -fr /opt/zeppelin/notebook
 COPY notebook /opt/zeppelin/notebook
 
-ADD shell/datalayer-zeppelin.sh /opt/zeppelin/bin
+ADD shell/spitfire.sh /opt/zeppelin/bin
 
 # Benchmarks
 
@@ -58,4 +58,4 @@ ADD lib/pod-cidr-namenode-topology-plugin-0.1-SNAPSHOT-jar-with-dependencies.jar
 
 WORKDIR /opt/zeppelin
 
-ENTRYPOINT bin/datalayer-zeppelin.sh
+ENTRYPOINT bin/spitfire.sh
