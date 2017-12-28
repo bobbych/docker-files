@@ -14,6 +14,6 @@
 
 FROM scratch
 
-ADD kubectl kubectl
+ADD /dist/kubectl /usr/local/bin/kubectl
 
-ENTRYPOINT ["/kubectl"]
+ENTRYPOINT ["/usr/local/bin/kubectl"]
