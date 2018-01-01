@@ -1,0 +1,13 @@
+FROM debian:jessie-backports
+
+RUN mkdir -p /opt/kuber
+
+ADD dist/kuber /opt/kuber
+RUN chmod +x /opt/kuber/kuber
+
+ADD _plane /opt/kuber/_plane
+
+ADD entrypoint.sh /entrypoint.sh
+RUN chmod a+x /entrypoint.sh
+
+ENTRYPOINT ["/entrypoint.sh"]
