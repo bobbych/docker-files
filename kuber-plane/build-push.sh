@@ -18,9 +18,9 @@
 # under the License.
 
 docker build \
-  -t datalayer/kuber:latest \
+  -t datalayer/kuber-plane:latest \
   .
 
-docker push datalayer/kuber:latest
+docker push datalayer/kuber-plane:latest
 
-# APISERVER_HOST=http://localhost:8001 docker run --name kuber-test -it --rm datalayer/kuber:latest -e APISERVER_HOST=http://localhost:8001
+# APISERVER_HOST=http://localhost:8001 docker run --name kuber-test -it --rm datalayer/kuber-plane:latest -e APISERVER_HOST=http://localhost:8001

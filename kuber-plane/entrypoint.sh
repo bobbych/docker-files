@@ -1,6 +1,8 @@
 #!/bin/bash
 
-/opt/kuber/kuber \
+cd /opt/kuber
+
+./kuber \
   server \
   --apiserver-host=$APISERVER_HOST \
   --azure-application-id=$AZURE_APPLICATION_ID \
