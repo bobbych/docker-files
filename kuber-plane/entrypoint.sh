@@ -5,9 +5,9 @@ cd /opt/kuber
 ./kuber \
   server \
   --apiserver-host=$APISERVER_HOST \
-  --azure-application-id=$AZURE_APPLICATION_ID \
-  --azure-redirect=$AZURE_REDIRECT \
-  --azure-scope=$AZURE_SCOPE \
+  --microsoft-application-id=$AZURE_APPLICATION_ID \
+  --microsoft-redirect=$AZURE_REDIRECT \
+  --microsoft-scope=$AZURE_SCOPE \
   --hdfs=$HDFS \
   --insecure-bind-address=$KUBER_INSECURE_BIND_ADDRESS \
   --kuber-plane=$KUBER_PLANE \

@@ -35,6 +35,8 @@ ADD conf/interpreter.json.template /opt/zeppelin/conf
 ADD conf/log4j.properties /opt/zeppelin/conf
 RUN sed -i s/INFO/DEBUG/ /opt/zeppelin/conf/log4j.properties
 
+ADD conf/shiro.ini /opt/zeppelin/conf
+
 RUN rm -fr /opt/zeppelin/notebook
 COPY notebook /opt/zeppelin/notebook
 
@@ -50,9 +52,18 @@ ADD dist/hadoop-2.9.0.tar.gz /opt
 RUN mv /opt/hadoop-2.9.0 /opt/hadoop
 ENV PATH=${PATH}:/opt/hadoop/bin
 
+# Keytab
+
+RUN mkdir -p /etc/datalayer/conf/keytabs/
+COPY keytabs/spnego-localhost.keytab /etc/datalayer/conf/keytabs/spnego-localhost.keytab
+
 # HDFS Locality
 
 ADD lib/pod-cidr-namenode-topology-plugin-0.1-SNAPSHOT-jar-with-dependencies.jar /lib
+
+# PORTS
+
+EXPOSE 8080
 
 # 
 
