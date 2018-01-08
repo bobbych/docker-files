@@ -16,4 +16,6 @@ cd /opt/kuber
   --microsoft-scope=$MICROSOFT_SCOPE \
   --spitfire-rest=$SPITFIRE_REST \
   --spitfire-ws=$SPITFIRE_WS \
+  --twitter-consumer-key=$TWITTER_CONSUMER_KEY
+  --twitter-consumer-secret=$TWITTER_CONSUMER_SECRET
   --twitter-redirect=$TWITTER_REDIRECT

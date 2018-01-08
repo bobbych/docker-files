@@ -25,22 +25,22 @@ RUN chmod +x /usr/local/bin/kubectl
 # Zeppelin Distribution
 
 ADD dist/zeppelin-0.8.0-SNAPSHOT.tar.gz /opt
-RUN mv /opt/zeppelin-0.8.0-SNAPSHOT /opt/zeppelin
+RUN mv /opt/zeppelin-0.8.0-SNAPSHOT /opt/spitfire
 
-ADD dist/local-repo.tar.gz /opt/zeppelin
+ADD dist/local-repo.tar.gz /opt/spitfire
 
-ADD conf/zeppelin-site.xml /opt/zeppelin/conf
-ADD conf/interpreter.json.template /opt/zeppelin/conf
+ADD conf/zeppelin-site.xml /opt/spitfire/conf
+ADD conf/interpreter.json.template /opt/spitfire/conf
 
-ADD conf/log4j.properties /opt/zeppelin/conf
-RUN sed -i s/INFO/DEBUG/ /opt/zeppelin/conf/log4j.properties
+ADD conf/log4j.properties /opt/spitfire/conf
+# RUN sed -i s/INFO/DEBUG/ /opt/spitfire/conf/log4j.properties
 
-ADD conf/shiro.ini /opt/zeppelin/conf
+ADD conf/shiro.ini /opt/spitfire/conf
 
-RUN rm -fr /opt/zeppelin/notebook
-COPY notebook /opt/zeppelin/notebook
+RUN rm -fr /opt/spitfire/notebook
+COPY notebook /opt/spitfire/notebook
 
-ADD shell/spitfire.sh /opt/zeppelin/bin
+ADD shell/spitfire.sh /opt/spitfire/bin
 
 # Benchmarks
 
@@ -52,6 +52,8 @@ ADD dist/hadoop-2.9.0.tar.gz /opt
 RUN mv /opt/hadoop-2.9.0 /opt/hadoop
 ENV PATH=${PATH}:/opt/hadoop/bin
 
+RUN cp /opt/spitfire/local-repo/2CBEJNFR7/* /opt/hadoop/share/hadoop/hdfs/
+
 # Keytab
 
 RUN mkdir -p /etc/datalayer/conf/keytabs/
@@ -61,12 +63,17 @@ COPY keytabs/spnego-localhost.keytab /etc/datalayer/conf/keytabs/spnego-localhos
 
 ADD lib/pod-cidr-namenode-topology-plugin-0.1-SNAPSHOT-jar-with-dependencies.jar /lib
 
+# Sanity
+
+# RUN find /opt/spitfire -type f -name commons-lang-2*.jar -exec rm  {} \;
+# RUN find /opt/spark -type f -name commons-lang-2*.jar -exec rm  {} \;
+
 # PORTS
 
 EXPOSE 8080
 
 # 
 
-WORKDIR /opt/zeppelin
+WORKDIR /opt/spitfire
 
 ENTRYPOINT bin/spitfire.sh

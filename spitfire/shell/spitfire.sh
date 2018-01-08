@@ -18,9 +18,9 @@
 # under the License.
 
 POD_NAME=$HOSTNAME
-sed -e "s|SPARK_KUBERNETES_DRIVER_POD_NAME|$POD_NAME|g" /opt/zeppelin/conf/interpreter.json.template > /tmp/interpreter-tmp.json
+sed -e "s|SPARK_KUBERNETES_DRIVER_POD_NAME|$POD_NAME|g" /opt/spitfire/conf/interpreter.json.template > /tmp/interpreter-tmp.json
 
 RESOURCESTAGINGSERVER_IP=$(kubectl get svc spark-k8s-resource-staging-service -o jsonpath='{.spec.clusterIP}')
-sed -e "s|SPARK_KUBERNETES_RESOURCESTAGINGSERVER_URI|$RESOURCESTAGINGSERVER_IP|g" /tmp/interpreter-tmp.json > /opt/zeppelin/conf/interpreter.json
+sed -e "s|SPARK_KUBERNETES_RESOURCESTAGINGSERVER_URI|$RESOURCESTAGINGSERVER_IP|g" /tmp/interpreter-tmp.json > /opt/spitfire/conf/interpreter.json
 
-/opt/zeppelin/bin/zeppelin.sh "$@"
+/opt/spitfire/bin/zeppelin.sh "$@"
