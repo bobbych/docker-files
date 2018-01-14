@@ -13,6 +13,4 @@ ADD _plane /opt/kuber/_plane
 ADD entrypoint.sh /entrypoint.sh
 RUN chmod a+x /entrypoint.sh
 
-EXPOSE 9091
-
 ENTRYPOINT ["/entrypoint.sh"]

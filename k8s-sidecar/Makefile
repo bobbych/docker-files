@@ -20,7 +20,7 @@ tag: .tag
 	@echo "or"
 	@echo "$$ make push TAG=$(shell cat .tag)"
 
-build: 
+build:
 	$(if $(TAG),,$(error TAG is not defined. Use 'make tag' to see a suggestion))
 	docker build --pull -t docker.io/datalayer/k8s-sidecar:$(TAG) .
 

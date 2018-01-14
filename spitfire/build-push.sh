@@ -18,11 +18,11 @@
 # under the License.
 
 docker build \
-  -t datalayer/spitfire:latest \
+  -t datalayer/spitfire:0.0.1 \
   --squash \
   --compress \
   .
 
-docker push datalayer/spitfire:latest
+docker push datalayer/spitfire:0.0.1
 
 # docker run --network host --name spitfire-test -v /root/.kube:/home/datalayer/.kube -it --rm -e APISERVER_HOST=http://localhost:8001 datalayer/spitfire:latest 

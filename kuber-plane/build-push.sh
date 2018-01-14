@@ -21,6 +21,6 @@ docker build \
   -t datalayer/kuber-plane:latest \
   .
 
-docker push datalayer/kuber-plane:latest
+docker push datalayer/kuber-plane:0.0.1
 
 # docker run --network host --name kuber-test -it --rm -e APISERVER_HOST=http://localhost:8001 -e KUBER_INSECURE_BIND_ADDRESS=0.0.0.0 datalayer/kuber-plane:latest

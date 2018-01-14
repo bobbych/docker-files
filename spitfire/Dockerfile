@@ -15,7 +15,7 @@
 # specific language governing permissions and limitations
 # under the License.
 
-FROM datalayer/spark-k8s-driver:2.2.0-0.5.0
+FROM datalayer/spark-k8s-driver:2.2.0
 
 # Kubectl
 
@@ -67,10 +67,6 @@ ADD lib/pod-cidr-namenode-topology-plugin-0.1-SNAPSHOT-jar-with-dependencies.jar
 
 # RUN find /opt/spitfire -type f -name commons-lang-2*.jar -exec rm  {} \;
 # RUN find /opt/spark -type f -name commons-lang-2*.jar -exec rm  {} \;
-
-# PORTS
-
-EXPOSE 8080
 
 # 
 
