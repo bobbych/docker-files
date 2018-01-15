@@ -17,7 +17,7 @@
 
 FROM datalayer/spark-k8s-driver:2.2.0
 
-# Git
+# GIT
 
 RUN apk add --no-cache git
 
