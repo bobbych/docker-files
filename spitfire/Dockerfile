@@ -17,6 +17,10 @@
 
 FROM datalayer/spark-k8s-driver:2.2.0
 
+# Git
+
+RUN apk add --no-cache git
+
 # Kubectl
 
 ADD dist/kubectl /usr/local/bin
@@ -29,16 +33,8 @@ RUN mv /opt/zeppelin-0.8.0-SNAPSHOT /opt/spitfire
 
 ADD dist/local-repo.tar.gz /opt/spitfire
 
-ADD conf/zeppelin-site.xml /opt/spitfire/conf
-ADD conf/interpreter.json.template /opt/spitfire/conf
-
-ADD conf/log4j.properties /opt/spitfire/conf
-# RUN sed -i s/INFO/DEBUG/ /opt/spitfire/conf/log4j.properties
-
-ADD conf/shiro.ini /opt/spitfire/conf
-
 RUN rm -fr /opt/spitfire/notebook
-COPY notebook /opt/spitfire/notebook
+# COPY notebook /opt/spitfire/notebook
 
 ADD shell/spitfire.sh /opt/spitfire/bin
 
