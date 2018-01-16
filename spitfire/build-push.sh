@@ -25,4 +25,4 @@ docker build \
 
 docker push datalayer/spitfire:0.0.1
 
-# docker run --network host --name spitfire-local -v /root/.kube:/home/datalayer/.kube -it --rm --env APISERVER_HOST=http://localhost:8001 --env SPITFIRE_NOTEBOOK_REPO=https://github.com/datalayer/notebook-init.git --env ZEPPELIN_CONF_DIR=/opt/spitfire/notebook/_lib datalayer/spitfire:0.0.1
+# docker run --network host --name spitfire-local -v /root/.kube:/home/datalayer/.kube -it --rm --env APISERVER_HOST=http://localhost:8001 --env SPITFIRE_NOTEBOOK_REPO=https://github.com/datalayer/notebook-init.git --env ZEPPELIN_CONF_DIR=/opt/spitfire/notebook/_conf datalayer/spitfire:0.0.1
