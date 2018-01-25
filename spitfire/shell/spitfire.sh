@@ -38,7 +38,7 @@ chmod +x /opt/spitfire/notebook/.git/hooks/post-commit
 POD_NAME=$HOSTNAME
 sed -e "s|SPARK_KUBERNETES_DRIVER_POD_NAME|$POD_NAME|g" /opt/spitfire/notebook/_conf/interpreter.json.template > /tmp/interpreter-tmp.json
 
-RESOURCESTAGINGSERVER_IP=$(kubectl get svc spark-k8s-resource-staging-service -o jsonpath='{.spec.clusterIP}')
+RESOURCESTAGINGSERVER_IP=$(kubectl get svc spark-resource-staging-service -o jsonpath='{.spec.clusterIP}')
 sed -e "s|SPARK_KUBERNETES_RESOURCESTAGINGSERVER_URI|$RESOURCESTAGINGSERVER_IP|g" /tmp/interpreter-tmp.json > /opt/spitfire/notebook/_conf/interpreter.json
 
 /opt/spitfire/bin/zeppelin.sh "$@"
