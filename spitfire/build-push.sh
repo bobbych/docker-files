@@ -17,9 +17,9 @@
 # specific language governing permissions and limitations
 # under the License.
 
+#  --squash \
 docker build \
   -t datalayer/spitfire:0.0.1 \
-  --squash \
   --compress \
   .
 
