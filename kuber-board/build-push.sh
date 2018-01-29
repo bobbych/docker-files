@@ -18,7 +18,7 @@
 # under the License.
 
 docker build \
-  -t datalayer/kuber-board:latest \
+  -t datalayer/kuber-board:0.0.1 \
   .
 
 docker push datalayer/kuber-board:0.0.1
