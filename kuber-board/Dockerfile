@@ -8,7 +8,7 @@ RUN mkdir -p /opt/kuber
 ADD dist/kuber /opt/kuber
 RUN chmod +x /opt/kuber/kuber
 
-ADD _plane /opt/kuber/_plane
+ADD _board /opt/kuber/_board
 
 ADD entrypoint.sh /entrypoint.sh
 RUN chmod a+x /entrypoint.sh
