@@ -18,7 +18,7 @@
 # under the License.
 
 docker build \
-  -t datalayer/kuber:0.0.1 \
+  -t datalayer/kuber-cli:0.0.1 \
   .
 
-docker push datalayer/kuber:0.0.1
+docker push datalayer/kuber-cli:0.0.1
