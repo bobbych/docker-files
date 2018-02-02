@@ -12,10 +12,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-FROM scratch
+FROM debian:jessie-backports
 
 ADD /dist/kubectl /usr/local/bin/kubectl
 ADD /dist/helm /usr/local/bin/helm
 ADD /dist/kuber /usr/local/bin/kuber
 
-ENTRYPOINT ["/usr/local/bin/kuber"]
+ADD entrypoint.sh /entrypoint.sh
+RUN chmod a+x /entrypoint.sh
+
+ENTRYPOINT ["/entrypoint.sh"]

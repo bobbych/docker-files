@@ -22,3 +22,5 @@ docker build \
   .
 
 docker push datalayer/kuber-cli:0.0.1
+
+# docker run --network host --name kuber-cli-local -it --rm --env APISERVER_HOST=http://localhost:8001 datalayer/kuber-cli:0.0.1
