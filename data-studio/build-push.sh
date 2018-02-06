@@ -23,4 +23,4 @@ docker build \
 
 docker push datalayer/data-studio:0.0.1
 
-# docker run --network host --name kuber-test -it --rm -e APISERVER_HOST=http://localhost:8001 -e KUBER_INSECURE_BIND_ADDRESS=0.0.0.0 datalayer/data-studio:latest
+# docker run --network host --name studio-test -it --rm -e APISERVER_HOST=http://localhost:8001 -e KUBER_INSECURE_BIND_ADDRESS=0.0.0.0 datalayer/data-studio:latest
