@@ -10,6 +10,11 @@ cd /opt/kuber
   --kuber-board=$KUBER_PLANE \
   --kuber-rest=$KUBER_REST \
   --kuber-ws=$KUBER_WS \
+  --google-api-key=$GOOGLE_API_KEY \
+  --google-client-id=$GOOGLE_APPLICATION_ID \
+  --google-redirect=$GOOGLE_REDIRECT \
+  --google-secret=$GOOGLE_SECRET \
+  --google-scope=$GOOGLE_SCOPE \
   --microsoft-application-id=$MICROSOFT_APPLICATION_ID \
   --microsoft-redirect=$MICROSOFT_REDIRECT \
   --microsoft-secret=$MICROSOFT_SECRET \
