@@ -7,7 +7,7 @@ cd /opt/kuber
   --apiserver-host="$APISERVER_HOST" \
   --hdfs="$HDFS" \
   --insecure-bind-address="$KUBER_INSECURE_BIND_ADDRESS" \
-  --kuber-board="$KUBER_PLANE" \
+  --kuber-board="$KUBER_BOARD" \
   --kuber-rest="$KUBER_REST" \
   --kuber-ws="$KUBER_WS" \
   --google-api-key="$GOOGLE_API_KEY" \

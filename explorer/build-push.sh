@@ -18,9 +18,9 @@
 # under the License.
 
 docker build \
-  -t datalayer/kuber-board:0.0.1 \
+  -t datalayer/explorer:0.0.1 \
   .
 
-docker push datalayer/kuber-board:0.0.1
+docker push datalayer/explorer:0.0.1
 
-# docker run --network host --name kuber-test -it --rm -e APISERVER_HOST=http://localhost:8001 -e KUBER_INSECURE_BIND_ADDRESS=0.0.0.0 datalayer/kuber-board:latest
+# docker run --network host --name kuber-test -it --rm -e APISERVER_HOST=http://localhost:8001 -e KUBER_INSECURE_BIND_ADDRESS=0.0.0.0 datalayer/explorer:latest
