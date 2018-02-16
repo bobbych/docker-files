@@ -12,7 +12,7 @@ cd /opt/kuber
   --google-scope="$GOOGLE_SCOPE" \
   --hdfs="$HDFS" \
   --insecure-bind-address="$KUBER_INSECURE_BIND_ADDRESS" \
-  --kuber-board="$KUBER_UI" \
+  --kuber-ui="$KUBER_UI" \
   --kuber-rest="$KUBER_REST" \
   --kuber-ws="$KUBER_WS" \
   --microsoft-application-id="$MICROSOFT_APPLICATION_ID" \
