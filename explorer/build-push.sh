@@ -17,6 +17,17 @@
 # specific language governing permissions and limitations
 # under the License.
 
+rm -fr _ui
+cd /dla/ui
+yarn build:dist
+
+cd /dla/kuber
+./build.sh
+
+cd /dla/docker-files/kuber
+cp -r /dla/ui/_ui .
+cp /dla/kuber/kuber ./dist
+
 docker build \
   -t datalayer/explorer:0.0.1 \
   .

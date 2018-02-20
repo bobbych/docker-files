@@ -12,6 +12,7 @@ cd /opt/kuber
   --google-scope="$GOOGLE_SCOPE" \
   --hdfs="$HDFS" \
   --insecure-bind-address="$KUBER_INSECURE_BIND_ADDRESS" \
+  --insecure-port="$KUBER_INSECURE_PORT" \
   --kuber-ui="$KUBER_UI" \
   --kuber-rest="$KUBER_REST" \
   --kuber-ws="$KUBER_WS" \
