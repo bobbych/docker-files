@@ -18,13 +18,14 @@
 # under the License.
 
 rm -fr _ui
+
 cd /dla/ui
-yarn build:dist
+build-dist.sh
 
 cd /dla/kuber
 ./build.sh
 
-cd /dla/docker-files/kuber
+cd /dla/docker-files/explorer
 cp -r /dla/ui/_ui .
 cp /dla/kuber/kuber ./dist
 
