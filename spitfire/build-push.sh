@@ -18,9 +18,11 @@
 # under the License.
 
 cd /dla/spitfire
-datalayer-spitifire-build
+datalayer-spitfire-build
 
 cp /dla/spitfire/zeppelin-distribution/target/zeppelin-0.8.0-SNAPSHOT.tar.gz /dla/docker-files/spitfire/dist/zeppelin-0.8.0-SNAPSHOT.tar.gz
+
+cd /dla/docker-files/spitfire
 
 #  --squash \
 docker build \
