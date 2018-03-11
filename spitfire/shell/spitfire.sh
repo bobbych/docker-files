@@ -36,7 +36,7 @@ chmod +x /opt/spitfire/notebook/.git/hooks/post-commit
 # cat /opt/spitfire/conf/users >> /opt/spitfire/conf/shiro.ini
 
 POD_NAME=$HOSTNAME
-sed -e "s|SPARK_KUBERNETES_DRIVER_POD_NAME|$POD_NAME|g" /opt/spitfire/notebook/_conf/interpreter.json.template > /tmp/interpreter-tmp.json
+sed -e "s|SPARK_KUBERNETES_DRIVER_POD_NAME|$POD_NAME|g" /opt/spitfire/notebook/_conf/interpreter-template.json > /tmp/interpreter-tmp.json
 
 RESOURCESTAGINGSERVER_IP=$(kubectl get svc spark-resource-staging-service -o jsonpath='{.spec.clusterIP}')
 sed -e "s|SPARK_KUBERNETES_RESOURCESTAGINGSERVER_URI|$RESOURCESTAGINGSERVER_IP|g" /tmp/interpreter-tmp.json > /opt/spitfire/notebook/_conf/interpreter.json

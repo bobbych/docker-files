@@ -15,7 +15,7 @@
 # specific language governing permissions and limitations
 # under the License.
 
-FROM datalayer/spark-k8s-driver:2.2.0
+FROM datalayer/spark-k8s-driver-py:2.2.0
 
 # GIT
 
