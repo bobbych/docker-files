@@ -17,14 +17,14 @@
 # specific language governing permissions and limitations
 # under the License.
 
-cd /dla/spitfire
-datalayer-spitfire-build
-cp /dla/spitfire/zeppelin-distribution/target/zeppelin-0.8.0-SNAPSHOT.tar.gz /dla/docker-files/spitfire/dist/zeppelin-0.8.0-SNAPSHOT.tar.gz
+# cd /dla/spitfire
+# datalayer-spitfire-build
+# cp /dla/spitfire/zeppelin-distribution/target/zeppelin-0.8.0-SNAPSHOT.tar.gz /dla/docker-files/spitfire/dist/zeppelin-0.8.0-SNAPSHOT.tar.gz
 
 cd /dla/docker-files/spitfire
-#  --squash \
-#  --compress \
 docker build \
+  --squash \
+  --compress \
   -t datalayer/spitfire:0.0.1 \
   .
 docker push datalayer/spitfire:0.0.1
